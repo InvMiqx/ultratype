@@ -1,0 +1,119 @@
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163707559-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-163707559-1');
+    </script>
+    <meta name="description" content="ultratype.cf is a sleek and modern typing test website. It supports different modes." />
+    <meta name="keywords" content="typing club, typing test, typing games, typing speed test, typing speed, typing, typing practice, typing lessons, a typing game, typing drills, ultratype, ultratype cf, ultratype.cf" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ultratype</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel='stylesheet' type='text/css' href='light.css' />
+
+    <!--JQ IMPORT-->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <link rel="icon" href="icon.png" />
+  <body onload="initialize()">
+
+    <script src='source.js' defer></script>
+    <script>
+      // $('.sidenav').mouseover(function(){
+      //
+      // });
+      var mouse_is_inside = false;
+
+      $(document).ready(function()
+      {
+          $('#navbay').hover(function(){
+              mouse_is_inside=true;
+          }, function(){
+              mouse_is_inside=false;
+          });
+
+          $("body").mouseup(function(){
+              if(! mouse_is_inside) closeNav();
+          });
+      });
+
+    </script>
+
+    <h2 id="header">ultratype</h2>
+
+
+    <!--Main-->
+    <div id="main">
+    <div class="topbar">
+      <div id="left-wing">
+        <span id="word-count">
+          <span id="wc-10" onclick="setWordCount(10)">10</span>
+          <text> / </text>
+          <span id="wc-25" onclick="setWordCount(25)">25</span>
+          <text> / </text>
+          <span id="wc-50" onclick="setWordCount(50)">50</span>
+          <text> / </text>
+          <span id="wc-100" onclick="setWordCount(100)">100</span>
+          <text> / </text>
+          <span id="wc-250" onclick="setWordCount(250)">250</span>
+        </span>
+      </div>
+      <div id="right-wing">WPM: XX / ACC: XX</div>
+    </div>
+      <div id="typing-area">
+        <div id="text-display"></div>
+        <div class="bar">
+          <input id="input-field" type="text" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" tabindex="1"/>
+          <button id="redo-button" onclick="setText()" tabindex="2">redo</button>
+        </div>
+      </div>
+    </div>
+
+    <!--sidebar!-->
+    <!--
+    word length slider
+    random words ENABLE
+    punctuation ENABLE
+    caps ENABLE
+
+    -->
+    <div id="navbay" class="sidenav" align="center">
+
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+
+        <div onclick="wordLengthToggle()" id='wordLengthToggler'>
+          <span id='wlb'>word length</span>
+        </div>
+        <input type="range" min="2" max="9" value="5" class="slider" id="wordLengthSlider" style="display:none"/>
+        <div onclick="randomLettersToggle()" id='randomLettersToggler'>
+          random letters
+        </div>
+        <div onclick="punctuationToggle()" id='punctuationToggler'>
+          punctuation
+        </div>
+
+        <div onclick="randomCapitalizationToggle()" id='randomCapitalToggler'>
+          random capitalization
+        </div>
+        <button class='reset-button' onclick="reset()">reset</button>
+
+    </div>
+
+
+    <div id="footer">
+      <div class="button settings-bar" onClick="openNav()" tabindex="4">settings</div>
+    </div>
+  </body>
+</html>
