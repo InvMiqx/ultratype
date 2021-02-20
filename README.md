@@ -1,7 +1,7 @@
 # ultratype
 A basic html/css/javascript typing speed tester with no frameworks
 
-hosted on http://ultratype.epizy.com/
+hosted on https://invmiqx.github.io/ultratype/
 
 it supports four custom modes currently, including: 
  - custom set word length
