@@ -1,5 +1,5 @@
 # ultratype
-A basic html/css/javascript typing speed tester with no frameworks
+A basic html/css/javascript typing game with no frameworks
 
 hosted on https://invmiqx.github.io/ultratype/
 
